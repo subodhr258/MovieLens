@@ -1,9 +1,9 @@
-from flask import Flask
-from flask_restful import Resource, Api, reqparse
+from flask import Flask, request, jsonify
 import pickle
 import numpy as np
 from model import ContentBased, CollabBased, HybridBased, ModelBased
 
+app = Flask(__name__)
 
 # the recommender module
 class Recommender:
@@ -25,12 +25,12 @@ class Recommender:
         self.clf_hybrid = HybridBased(latent_content, latent_collab)
         self.clf_algo = ModelBased(self.algo)
 
-    def parsing_args(self):
-        self.parser = reqparse.RequestParser()
-        self.parser.add_argument('movie', required=False,
-                                 help="movie title followed by year")
-        self.parser.add_argument('limit', required=False,
-                                 help="N in top N films")
+    # def parsing_args(self):
+    #     self.parser = reqparse.RequestParser()
+    #     self.parser.add_argument('movie', required=False,
+    #                              help="movie title followed by year")
+    #     self.parser.add_argument('limit', required=False,
+    #                              help="N in top N films")
 
     def get_all_recommendations(self, moviename, n):
         if moviename in self.movie_map.keys():
@@ -59,32 +59,25 @@ class Recommender:
 
 # the app
 
-app = Flask(__name__)
-api = Api(app)
 
 
-class MovieBasis(Resource):
+@app.route('/movies/<basis>/',methods=['GET'])
+# class MovieBasis(Resource):
+def getMovieBasis(basis):
+    movie = request.args.get("movie",None)
+    n = request.args.get("limit",None)
+    output = ex.get_all_recommendations(movie, int(n))
+    return jsonify(output[basis])
 
-    def get(self, basis):
-        args = ex.parser.parse_args()
-        movie = args['movie']
-        n = args['limit']
-        output = ex.get_all_recommendations(movie, int(n))
-        return output[basis]
-
-
-class UserBasis(Resource):
-
-    def get(self, userId):
-        args = ex.parser.parse_args()
-        n = args['limit']
-        output = ex.get_user_recommendation(int(userId), int(n))
-        return output
-
-api.add_resource(MovieBasis, '/movies/<basis>')
-api.add_resource(UserBasis, '/users/<userId>')
+@app.route('/users/<userId>/',methods=['GET'])
+# class UserBasis(Resource):
+def getUserBasis(userId):
+    args = ex.parser.parse_args()
+    n = args['limit']
+    output = ex.get_user_recommendation(int(userId), int(n))
+    return jsonify(output)
 
 if __name__ == '__main__':
     ex = Recommender()
-    ex.parsing_args()
+    # ex.parsing_args()
     app.run(debug=True, port=8000)
