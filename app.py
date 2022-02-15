@@ -1,10 +1,9 @@
-from doctest import OutputChecker
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 import pickle
 import numpy as np
 from model import ContentBased, CollabBased, HybridBased, ModelBased
-import os
+
 
 # the recommender module
 class Recommender:
@@ -35,6 +34,7 @@ class Recommender:
 
     def get_all_recommendations(self, moviename, n):
         if moviename in self.movie_map.keys():
+
             output = {
                 'content': {'content':
                             self.clf_content.predict_top_n(moviename, n)},
@@ -43,7 +43,6 @@ class Recommender:
                 'hybrid': {'hybrid':
                            self.clf_hybrid.predict_top_n(moviename, n)},
                      }
-            print(output)
         else:
             output = None
         return output
@@ -62,32 +61,21 @@ class Recommender:
 
 app = Flask(__name__)
 api = Api(app)
-ex = Recommender()
-ex.parsing_args()
-port = int(os.environ.get("PORT", 5000))
-print(port,"---------------------------")
-app.run(host='0.0.0.0', port=port)
+
 
 class MovieBasis(Resource):
 
     def get(self, basis):
-        global ex
         args = ex.parser.parse_args()
         movie = args['movie']
         n = args['limit']
-        # movie="Toy Story (1995)"
-        # n = 10
         output = ex.get_all_recommendations(movie, int(n))
-        if output :
-            return output[basis]
-        else:
-            return "Movie not found."
+        return output[basis]
 
 
 class UserBasis(Resource):
-    
+
     def get(self, userId):
-        global ex
         args = ex.parser.parse_args()
         n = args['limit']
         output = ex.get_user_recommendation(int(userId), int(n))
@@ -96,4 +84,7 @@ class UserBasis(Resource):
 api.add_resource(MovieBasis, '/movies/<basis>')
 api.add_resource(UserBasis, '/users/<userId>')
 
-
+if __name__ == '__main__':
+    ex = Recommender()
+    ex.parsing_args()
+    app.run(debug=True, port=8000)
