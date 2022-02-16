@@ -75,5 +75,5 @@ def getMovieBasis(basis):
 #     n = request.args.get("limit",None)
 #     output = ex.get_user_recommendation(int(userId), int(n))
 #     return jsonify(output)
-
-app.run(debug=True, port=8000)
+if __name__=='__main__':
+    app.run(debug=True, port=8000)
