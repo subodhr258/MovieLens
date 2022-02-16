@@ -60,7 +60,7 @@ class Recommender:
 # the app
 
 
-
+ex = Recommender()
 @app.route('/movies/<basis>/',methods=['GET'])
 # class MovieBasis(Resource):
 def getMovieBasis(basis):
@@ -69,15 +69,11 @@ def getMovieBasis(basis):
     output = ex.get_all_recommendations(movie, int(n))
     return jsonify(output[basis])
 
-@app.route('/users/<userId>/',methods=['GET'])
-# class UserBasis(Resource):
-def getUserBasis(userId):
-    args = ex.parser.parse_args()
-    n = args['limit']
-    output = ex.get_user_recommendation(int(userId), int(n))
-    return jsonify(output)
+# @app.route('/users/<userId>/',methods=['GET'])
+# # class UserBasis(Resource):
+# def getUserBasis(userId):
+#     n = request.args.get("limit",None)
+#     output = ex.get_user_recommendation(int(userId), int(n))
+#     return jsonify(output)
 
-if __name__ == '__main__':
-    ex = Recommender()
-    # ex.parsing_args()
-    app.run(debug=True, port=8000)
+app.run(debug=True, port=8000)

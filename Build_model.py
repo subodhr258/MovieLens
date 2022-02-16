@@ -76,7 +76,7 @@ def build_model():
         pickle.dump(Mapping_file, f, pickle.HIGHEST_PROTOCOL)
     with open('./Files/model_svd.pkl', 'wb') as f:
         pickle.dump(algorithm, f, pickle.HIGHEST_PROTOCOL)
-
+    
     return
 
 if __name__ == "__main__":
