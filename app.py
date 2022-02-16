@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import pickle
 import numpy as np
 from model import ContentBased, CollabBased, HybridBased, ModelBased
+import os
 
 app = Flask(__name__)
 
@@ -75,5 +76,7 @@ def getMovieBasis(basis):
 #     n = request.args.get("limit",None)
 #     output = ex.get_user_recommendation(int(userId), int(n))
 #     return jsonify(output)
+
 if __name__=='__main__':
-    app.run(debug=True, port=8000)
+    port = int(os.environ.get('PORT', 33507))
+    app.run(debug=True, port=port)
