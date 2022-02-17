@@ -7,7 +7,7 @@
 - Subodh Rajpopat (2019IMT-103)
 
 ## Project Description: 
-A movie recommendation system...
+A movie recommendation system...  
 MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
 
 ## Screenshots:
@@ -20,54 +20,13 @@ MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
 ```
  https://movielens-ap.herokuapp.com/movies/[basis]/?movie=[movie]&limit=n
 ```
+-[basis] can be replaced by 'content', 'collaborative' or 'hybrid'.
+-[movie] can be replaced by the movie name.
+-[n] can be replaced by the number of reccomendations to be displayed.
 
-Example 1: 
+Example - Hybrid Filtering: 
 ```
- https://movielens-ap.herokuapp.com/movies/content/?movie=Toy%20Story%20(1995)&limit=10
-```
-Output:
-```
-{
-    "content": [
-        "Secret Adventures of Tom Thumb, The (1993)",
-        "Gumby: The Movie (1995)",
-        "Swan Princess, The (1994)",
-        "Lion King, The (1994)",
-        "Pocahontas (1995)",
-        "Forrest Gump (1994)",
-        "Flintstones, The (1994)",
-        "Goofy Movie, A (1995)",
-        "Balto (1995)",
-        "Apollo 13 (1995)"
-    ]
-}
-
-```
-
-Example 2: 
-```
- https://movielens-ap.herokuapp.com/movies/collaborative/?movie=Toy%20Story%20(1995)&limit=10
-```
-Output:
-```
-{
-    "collaborative" : [
-        "Star Wars: Episode IV - A New Hope (1977)",
-        "Lion King, The (1994)","Pulp Fiction (1994)",
-        "Apollo 13 (1995)",
-        "True Lies (1994)",
-        "Jurassic Park (1993)",
-        "Forrest Gump (1994)",
-        "Fugitive, The (1993)",
-        "Mask, The (1994)",
-        "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)"
-    ]
-}
-```
-
-Example 3: 
-```
- https://movielens-ap.herokuapp.com/movies/hybrid/?movie=Toy%20Story%20(1995)&limit=10
+ https://movielens-ap.herokuapp.com/movies/hybrid/?movie=Toy Story (1995)&limit=10
 ```
 Output:
 ```
@@ -101,5 +60,3 @@ Output:
 2. Run ```pip install -r requirements.txt``` in the project folder to install all the required packages.
 3. Run ```python app.py``` or ```flask run``` to start the server
 4. Visit ```http://127.0.0.1:5000/movies/content/?movie=Toy%20Story%20(1995)&limit=10``` to see a sample result of backend API
-
-
