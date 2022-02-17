@@ -1,9 +1,29 @@
-# Recommendation_System
-Winter Project Team #40
+## Movie Recommendation System 
+(Winter Project Team #40)  
+A movie recommendation system...
+
+Screenshots:
+
+Hostel URL:
+
+Features Implemented:
+Frontend Features:
+
+Backend Features:
+
+Tech Stack:
+
+Local Setup:
+
+Team Members:
+
+
+
 
 MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
 
-A movie recommendation system...
+
+
 
 ```
  https://movielens-ap.herokuapp.com/movies/[basis]/?movie=[movie]&limit=n
