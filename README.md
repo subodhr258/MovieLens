@@ -7,12 +7,17 @@
 - Subodh Rajpopat (2019IMT-103)
 
 ## Project Description: 
-A movie recommendation system...  
+A Movie Recommendation System on the MovieLens dataset with Flask API as backend.  
+The recommendation system uses collaborative and content based approaches to filter top N movie recommendations.  
+Content based - uses the information of the movie. For example, movies which have similar ratings or genre or cast.
+Collaborative filtering - uses the information of the connection between the user and movies. For example, users which give similar ratings to a movie.
+Hybrid - uses a combination of collaborative and content based recommendations.
+
 MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
 
 ## Screenshots:
 
-## Hostel URL:
+## Hosted URL:
 ### Frontend URL:
 ```
 ```
@@ -20,9 +25,9 @@ MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
 ```
  https://movielens-ap.herokuapp.com/movies/[basis]/?movie=[movie]&limit=n
 ```
--[basis] can be replaced by 'content', 'collaborative' or 'hybrid'.
--[movie] can be replaced by the movie name.
--[n] can be replaced by the number of reccomendations to be displayed.
+- [basis] can be replaced by 'content', 'collaborative' or 'hybrid'.
+- [movie] can be replaced by the movie name.
+- [n] can be replaced by the number of reccomendations to be displayed.
 
 Example - Hybrid Filtering: 
 ```
@@ -53,6 +58,13 @@ Output:
 ### Backend Features:
 
 ## Tech Stack:
+
+### Backend:
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Numpy](https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
+![Sklearn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+
 
 ## Local Setup:
 
