@@ -1,30 +1,22 @@
-## Movie Recommendation System 
-(Winter Project Team #40)  
+# Movie Recommendation System 
+(Winter Project Team #40) 
+
+## Team Members:
+- Kushagra Nageshwar (2019IMT-53)
+- Latikesh Ahire (2019IMT-55)
+- Subodh Rajpopat (2019IMT-103)
+
+## Project Description: 
 A movie recommendation system...
-
-Screenshots:
-
-Hostel URL:
-
-Features Implemented:
-Frontend Features:
-
-Backend Features:
-
-Tech Stack:
-
-Local Setup:
-
-Team Members:
-
-
-
-
 MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
 
+## Screenshots:
 
-
-
+## Hostel URL:
+### Frontend URL:
+```
+```
+### Backend URL:
 ```
  https://movielens-ap.herokuapp.com/movies/[basis]/?movie=[movie]&limit=n
 ```
@@ -94,3 +86,20 @@ Output:
     ]
 }
 ```
+
+
+## Features Implemented:
+### Frontend Features:
+
+### Backend Features:
+
+## Tech Stack:
+
+## Local Setup:
+
+1. Run git clone in the project folder
+2. Run ```pip install -r requirements.txt``` in the project folder to install all the required packages.
+3. Run ```python app.py``` or ```flask run``` to start the server
+4. Visit ```http://127.0.0.1:5000/movies/content/?movie=Toy%20Story%20(1995)&limit=10``` to see a sample result of backend API
+
+
