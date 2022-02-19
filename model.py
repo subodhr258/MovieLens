@@ -1,4 +1,3 @@
-import sys
 import numpy as np
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
@@ -57,21 +56,3 @@ class HybridBased(object):
         similar = pd.DataFrame(dictDf, index=self.content.index)
         similar.sort_values('hybrid', ascending=False, inplace=True)
         return similar.head(n+1)[1:].index.tolist()
-
-
-class ModelBased(object):
-
-    def __init__(self, algorithm):
-        """top N for a particular user
-        """
-        self.algo = algorithm
-
-    def predict_top_n_user(self, ui, d, n=10):
-        predictedL = []
-        for i, j in d.items():
-            predicted = self.algo.predict(ui, j)
-            predictedL.append((i, predicted[3]))
-        pdf = pd.DataFrame(predictedL, columns=['movies', 'ratings'])
-        pdf.sort_values('ratings', ascending=False, inplace=True)
-        pdf.set_index('movies', inplace=True)
-        return pdf.head(n).index.tolist()
