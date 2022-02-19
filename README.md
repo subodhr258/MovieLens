@@ -20,7 +20,6 @@ MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
         ├── latent_collaborative.pkl    #vectorized collaborative data
         ├── latent_content.pkl          #vectorized content data
         ├── map.pkl                     #map of movie titles to movie ids
-        ├── model_svd.pkl               #
         └── rating.pkl
     ├── ml-20m                          #dataset for the model
         ├── movies.csv                  #contains movieid, title and genre of the movies
@@ -67,8 +66,8 @@ Output:
 ```
 
 ## Backend Features Implemented:
-The algorithm returns recommendations with options among Content, Collaborative and Hybrid filtering.
-The user can set the number of recommendations he/she wants to output.
+- The algorithm returns recommendations with options among Content, Collaborative and Hybrid filtering.
+- The user can set the number of recommendations he/she wants to output.
 
 ## Tech Stack:
 
@@ -83,4 +82,4 @@ The user can set the number of recommendations he/she wants to output.
 1. Run git clone in the project folder
 2. Run ```pip install -r requirements.txt``` in the project folder to install all the required packages.
 3. Run ```python app.py``` or ```flask run``` to start the server
-4. Visit ```http://127.0.0.1:5000/movies/content/?movie=Toy%20Story%20(1995)&limit=10``` to see a sample result of backend API
+4. Visit ```http://127.0.0.1:33507/movies/content/?movie=Toy%20Story%20(1995)&limit=10``` to see a sample result of backend API
