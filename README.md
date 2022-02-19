@@ -66,8 +66,11 @@ Output:
 ```
 
 ## Backend Features Implemented:
-- The algorithm returns recommendations with options among Content, Collaborative and Hybrid filtering.
-- The user can set the number of recommendations he/she wants to output.
+- The algorithm returns recommendations with options among Content, Collaborative and Hybrid filtering:
+    - Content - if the user wants recommendations on the basis of the type, genre, tags of the movie.
+    - Collaborative - if the user wants recommendations on the basis of movies that other users have liked.
+    - Hybrid - if the user wants recommendations on the basis of both content and collaborative based filtering.
+- The user can set the number of recommendations (n) that he/she wants the API to return.
 
 ## Tech Stack:
 
