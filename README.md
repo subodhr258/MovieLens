@@ -1,26 +1,41 @@
-# Movie Recommendation System 
-(Winter Project Team #40) 
+# Movie Recommendation System  
 
-## Team Members:
-- Kushagra Nageshwar (2019IMT-53)
-- Latikesh Ahire (2019IMT-55)
+## Winter Project Team #40:
+- Kushagra Nageshwar (2019IMT-053)
+- Latikesh Ahire (2019IMT-055)
 - Subodh Rajpopat (2019IMT-103)
 
 ## Project Description: 
 A Movie Recommendation System on the MovieLens dataset with Flask API as backend.  
 The recommendation system uses collaborative and content based approaches to filter top N movie recommendations.  
-Content based - uses the information of the movie. For example, movies which have similar ratings or genre or cast.
-Collaborative filtering - uses the information of the connection between the user and movies. For example, users which give similar ratings to a movie.
-Hybrid - uses a combination of collaborative and content based recommendations.
+- Content based - uses the information of the movie. For example, movies which have similar ratings or genre or cast.
+- Collaborative filtering - uses the information of the connection between the user and movies. For example, users which give similar ratings to a movie.
+- Hybrid - uses a combination of collaborative and content based recommendations.
 
 MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
+### Directory Layout
 
-## Screenshots:
+    .
+    ├── Files                           #pickle files of the data
+        ├── latent_collaborative.pkl    #vectorized collaborative data
+        ├── latent_content.pkl          #vectorized content data
+        ├── map.pkl                     #map of movie titles to movie ids
+        ├── model_svd.pkl               #
+        └── rating.pkl
+    ├── ml-20m                          #dataset for the model
+        ├── movies.csv                  #contains movieid, title and genre of the movies
+        ├── ratings.csv                 #contains userid, movieid, rating and timestamp
+        └── tags.csv                    #contains userid, movieid, tag and timestamp
+    ├── .gitignore
+    ├── Build_model.py                  #builds the model and saves it in a pickle format
+    ├── Procfile                        
+    ├── README.md 
+    ├── app.py                          #main app that runs the server using the models from pkl files
+    ├── model.py                        #returns the output from the models using cosine similarity
+    ├── requirements.txt
+    └── runtime.txt
 
 ## Hosted URL:
-### Frontend URL:
-```
-```
 ### Backend URL:
 ```
  https://movielens-ap.herokuapp.com/movies/[basis]/?movie=[movie]&limit=n
@@ -51,11 +66,9 @@ Output:
 }
 ```
 
-
-## Features Implemented:
-### Frontend Features:
-
-### Backend Features:
+## Backend Features Implemented:
+The algorithm returns recommendations with options among Content, Collaborative and Hybrid filtering.
+The user can set the number of recommendations he/she wants to output.
 
 ## Tech Stack:
 
@@ -64,7 +77,6 @@ Output:
 ![Numpy](https://img.shields.io/badge/Numpy-777BB4?style=for-the-badge&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
 ![Sklearn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-
 
 ## Local Setup:
 
