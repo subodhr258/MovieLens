@@ -10,9 +10,12 @@ A Movie Recommendation System on the MovieLens dataset with Flask API as backend
 The recommendation system uses collaborative and content based approaches to filter top N movie recommendations.  
 - Content based - uses the information of the movie. For example, movies which have similar ratings or genre or cast.
 - Collaborative filtering - uses the information of the connection between the user and movies. For example, users which give similar ratings to a movie.
-- Hybrid - uses a combination of collaborative and content based recommendations.
+- Hybrid - uses a combination of collaborative and content based recommendations.    
 
-MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/
+MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/  
+### Recommendation Diagram:
+<!-- ![Recommendation Diagram](https://drive.google.com/uc?export=view&id=1SYQUz1gWs0fBJOsh6yXesjBivjz0cQS_)   -->
+<a href="https://drive.google.com/uc?export=view&id=1SYQUz1gWs0fBJOsh6yXesjBivjz0cQS_"><img src="https://drive.google.com/uc?export=view&id=1SYQUz1gWs0fBJOsh6yXesjBivjz0cQS_" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />  
 ### Directory Layout
 
     .
