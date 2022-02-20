@@ -12,6 +12,8 @@ The recommendation system uses collaborative and content based approaches to fil
 - Collaborative filtering - uses the information of the connection between the user and movies. For example, users which give similar ratings to a movie.
 - Hybrid - uses a combination of collaborative and content based recommendations.    
 
+Link to demo video: https://youtu.be/uQGfodeABoo  
+FrontEnd Github Repository Link: https://github.com/Chaithanya45/RecoMovie  
 MovieLens Dataset: https://grouplens.org/datasets/movielens/20m/  
 ### Recommendation Diagram:
 <!-- ![Recommendation Diagram](https://drive.google.com/uc?export=view&id=1SYQUz1gWs0fBJOsh6yXesjBivjz0cQS_)   -->
